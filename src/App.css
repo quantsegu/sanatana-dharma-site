@@ -33,24 +33,19 @@
   gap: 10px;
 }
 
-.om-logo {
-  font-size: 1.6rem;
-  color: var(--color-accent-soft);
+.brand-logo {
+  display: block;
+  height: 40px;
+  width: auto;
+  max-width: min(300px, 72vw);
+  object-fit: contain;
 }
 
-.site-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.12rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-}
-
-.site-name small {
-  font-weight: 300;
-  opacity: 0.72;
-  font-size: 0.8em;
-  margin-left: 8px;
-  letter-spacing: 0.08em;
+@media (max-width: 520px) {
+  .brand-logo {
+    height: 34px;
+    max-width: min(260px, 78vw);
+  }
 }
 
 .top-nav {
@@ -943,12 +938,14 @@
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.app-footer .fom {
-  font-family: 'Noto Serif Devanagari', serif;
-  font-size: 2rem;
-  color: var(--color-accent-soft);
+.footer-logo {
   display: block;
-  margin-bottom: 8px;
+  margin: 0 auto 14px;
+  height: 52px;
+  width: auto;
+  max-width: min(320px, 92vw);
+  object-fit: contain;
+  opacity: 0.92;
 }
 
 .app-footer p {
@@ -1082,6 +1079,14 @@
   box-shadow: var(--shadow-soft);
 }
 
+.admin-login-logo {
+  display: block;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 16px;
+  object-fit: contain;
+}
+
 .admin-login-card h1 {
   margin: 0 0 8px;
   font-family: 'Cormorant Garamond', serif;
@@ -1144,8 +1149,17 @@
 }
 
 .admin-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-weight: 700;
   color: var(--color-accent-soft);
+}
+
+.admin-brand-mark {
+  display: block;
+  border-radius: 10px;
+  flex-shrink: 0;
 }
 
 .admin-nav {

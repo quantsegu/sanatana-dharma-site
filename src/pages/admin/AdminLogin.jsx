@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { getAdminToken, loginAdmin } from '../../api/cms';
+import { BRANDING } from '../../branding';
 
 export default function AdminLogin() {
   const navigate = useNavigate();
@@ -29,6 +30,15 @@ export default function AdminLogin() {
   return (
     <div className="admin-login-page">
       <div className="admin-login-card">
+        <img
+          className="admin-login-logo"
+          src={BRANDING.logoMark}
+          srcSet={`${BRANDING.logoMark} 1x, ${BRANDING.logoMark2x} 2x`}
+          width={72}
+          height={72}
+          alt=""
+          decoding="async"
+        />
         <h1>Content admin</h1>
         <p className="admin-login-hint">Sign in to manage videos and blog posts.</p>
         <form onSubmit={onSubmit}>

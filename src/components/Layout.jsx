@@ -1,8 +1,5 @@
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
-
-function Om() {
-  return <span style={{ fontFamily: "'Noto Serif Devanagari', serif" }}>ॐ</span>;
-}
+import { BRANDING } from '../branding';
 
 export default function Layout() {
   const location = useLocation();
@@ -12,10 +9,16 @@ export default function Layout() {
     <div className="app-shell">
       <header className="top-bar">
         <Link className="brand" to="/">
-          <span className="om-logo"><Om /></span>
-          <span className="site-name">
-            Sanātana Dharma <small>Learning Guide</small>
-          </span>
+          <img
+            className="brand-logo"
+            src={BRANDING.logoFullDarkBg}
+            srcSet={`${BRANDING.logoFullDarkBg} 300w, ${BRANDING.logoFull} 1024w`}
+            sizes="(max-width: 640px) 70vw, 300px"
+            width={300}
+            height={83}
+            alt="Sanātana Dharma — The Eternal Way"
+            decoding="async"
+          />
         </Link>
         <nav className="top-nav">
           <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>Home</NavLink>
@@ -37,7 +40,14 @@ export default function Layout() {
       </main>
 
       <footer className="app-footer">
-        <span className="fom"><Om /></span>
+        <img
+          className="footer-logo"
+          src={BRANDING.logoMonochrome}
+          width={300}
+          height={83}
+          alt=""
+          decoding="async"
+        />
         <p>सर्वे भवन्तु सुखिनः · May all beings be happy</p>
         <p className="footer-credit">
           <strong>Lakshmi Narayana Segu</strong> — with everyone coming together to grow a living practice of Sanātana Dharma

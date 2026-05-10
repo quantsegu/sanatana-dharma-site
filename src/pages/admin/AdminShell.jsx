@@ -1,5 +1,6 @@
 import { Link, Navigate, NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { clearAdminToken, getAdminToken } from '../../api/cms';
+import { BRANDING } from '../../branding';
 
 export default function AdminShell() {
   const navigate = useNavigate();
@@ -16,7 +17,10 @@ export default function AdminShell() {
   return (
     <div className="admin-shell">
       <header className="admin-top">
-        <Link to="/" className="admin-brand">← Site</Link>
+        <Link to="/" className="admin-brand">
+          <img src={BRANDING.logoMark} width={36} height={36} alt="" className="admin-brand-mark" decoding="async" />
+          <span>← Site</span>
+        </Link>
         <nav className="admin-nav">
           <NavLink to="/admin/videos" className={({ isActive }) => `admin-nav-link ${isActive ? 'active' : ''}`}>
             Videos
