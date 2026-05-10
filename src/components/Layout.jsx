@@ -12,10 +12,10 @@ export default function Layout() {
           <img
             className="brand-logo"
             src={BRANDING.logoFullLight}
-            srcSet={`${BRANDING.logoFullLight} 300w, ${BRANDING.logoFull} 1024w`}
-            sizes="(max-width: 640px) 70vw, 300px"
-            width={300}
-            height={83}
+            srcSet={`${BRANDING.logoFullLight} 480w`}
+            sizes="(max-width: 640px) 78vw, 320px"
+            width={480}
+            height={160}
             alt="Sanātana Dharma — The Eternal Way"
             decoding="async"
           />
@@ -43,10 +43,10 @@ export default function Layout() {
         <img
           className="footer-logo"
           src={BRANDING.logoFullLight}
-          srcSet={`${BRANDING.logoFullLight} 300w, ${BRANDING.logoFull} 1024w`}
-          sizes="(max-width: 640px) 85vw, 320px"
-          width={300}
-          height={83}
+          srcSet={`${BRANDING.logoFullLight} 480w`}
+          sizes="(max-width: 640px) 90vw, 360px"
+          width={480}
+          height={160}
           alt=""
           decoding="async"
         />
