@@ -11,8 +11,8 @@ export default function Layout() {
         <Link className="brand" to="/">
           <img
             className="brand-logo"
-            src={BRANDING.logoFullDarkBg}
-            srcSet={`${BRANDING.logoFullDarkBg} 300w, ${BRANDING.logoFull} 1024w`}
+            src={BRANDING.logoFullLight}
+            srcSet={`${BRANDING.logoFullLight} 300w, ${BRANDING.logoFull} 1024w`}
             sizes="(max-width: 640px) 70vw, 300px"
             width={300}
             height={83}
@@ -42,7 +42,9 @@ export default function Layout() {
       <footer className="app-footer">
         <img
           className="footer-logo"
-          src={BRANDING.logoMonochrome}
+          src={BRANDING.logoFullLight}
+          srcSet={`${BRANDING.logoFullLight} 300w, ${BRANDING.logoFull} 1024w`}
+          sizes="(max-width: 640px) 85vw, 320px"
           width={300}
           height={83}
           alt=""
