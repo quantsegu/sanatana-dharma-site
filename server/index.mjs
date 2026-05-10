@@ -269,7 +269,8 @@ app.delete('/api/admin/blogs/:id', authMiddleware, async (req, res) => {
 // --- Static + SPA (production) ---
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(distPath));
-  app.get('*', (req, res, next) => {
+  // Express 5 + path-to-regexp v8: bare '*' is invalid; use a named wildcard.
+  app.get('/{*splat}', (req, res, next) => {
     if (req.path.startsWith('/api')) return next();
     res.sendFile(path.join(distPath, 'index.html'));
   });
