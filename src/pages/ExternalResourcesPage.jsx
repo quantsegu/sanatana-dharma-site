@@ -1,26 +1,28 @@
 const EXTERNAL_RESOURCES = [
   {
     id: 'brink-trick',
-    title: 'Brink Trick Figma Site',
+    title: 'Where the Alps Meet the Vedas',
     slug: 'brink-trick-47383861',
     url: 'https://brink-trick-47383861.figma.site',
-    description: 'External Figma-hosted page shared as part of the Sanatana Dharma resources.',
+    description:
+      'An Alpine ashram for the modern seeker — yoga, Ayurveda, and sattvic living at the foot of sacred mountains (Italian Alps; Hindu-rooted retreat).',
   },
   {
     id: 'render-hook',
-    title: 'Render Hook Figma Site',
+    title: 'Sustainable Farm Planning',
     slug: 'render-hook-84840522',
     url: 'https://render-hook-84840522.figma.site',
-    description: 'External Figma-hosted page shared as part of the Sanatana Dharma resources.',
+    description:
+      'Sustainable farm planning — practical guidance for designing and stewarding farm projects with ecological balance in mind.',
   },
 ];
 
 export default function ExternalResourcesPage() {
   return (
     <section className="page-section">
-      <h1 style={{ marginBottom: 12 }}>External Resource Pages</h1>
+      <h1 style={{ marginBottom: 12 }}>Ashram & Farm sites</h1>
       <p style={{ marginTop: 0, opacity: 0.9 }}>
-        These pages are hosted externally and linked from this site for quick access.
+        Companion sites hosted on Figma — Alpine retreat vision and sustainable farm planning — opened here for quick access.
       </p>
 
       <div style={{ display: 'grid', gap: 16, marginTop: 18 }}>
@@ -29,7 +31,7 @@ export default function ExternalResourcesPage() {
             <h2 style={{ marginTop: 0 }}>{resource.title}</h2>
             <p>{resource.description}</p>
             <p style={{ marginBottom: 12 }}>
-              <strong>Site path:</strong> /pages/{resource.slug}
+              <strong>Shortcut on this site:</strong> /pages/{resource.slug}
             </p>
             <a
               href={resource.url}

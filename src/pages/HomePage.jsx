@@ -31,7 +31,7 @@ export default function HomePage() {
           <Link to="/library" className="cta-button">Open Topic Library</Link>
           {resumeTopicId ? <Link to={`/topic/${resumeTopicId}`} className="cta-button">Resume Reading</Link> : <Link to="/bookmarks" className="cta-button">Open Bookmarks</Link>}
           <Link to="/videos" className="cta-button ghost">Videos</Link>
-          <Link to="/pages" className="cta-button ghost">Pages</Link>
+          <Link to="/pages" className="cta-button ghost">Ashram & Farm</Link>
           <Link to="/blog" className="cta-button ghost">Blog</Link>
           <Link to="/knowledge-graph" className="cta-button ghost">Open Knowledge Graph</Link>
         </div>

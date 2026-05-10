@@ -2,13 +2,13 @@
 
 React + Vite frontend with an Express API backend that serves CMS data and, in production, also serves the built frontend from `dist`.
 
-## Added external pages
+## Ashram & Farm shortcut pages
 
-The following links are now available as site pages:
+Shortcuts under `/pages` open companion Figma-hosted sites:
 
-- `/pages/brink-trick-47383861` -> `https://brink-trick-47383861.figma.site`
-- `/pages/render-hook-84840522` -> `https://render-hook-84840522.figma.site`
-- `/pages` -> index page listing both external resources
+- `/pages` — index (Ashram & Farm sites)
+- `/pages/brink-trick-47383861` — **Where the Alps Meet the Vedas** → `https://brink-trick-47383861.figma.site`
+- `/pages/render-hook-84840522` — **Sustainable Farm Planning** → `https://render-hook-84840522.figma.site`
 
 ## Local development
 
