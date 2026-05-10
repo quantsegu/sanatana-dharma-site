@@ -1,4 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
+import { useEffect } from 'react';
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
 import ExplorePage from './pages/ExplorePage';
@@ -13,11 +14,19 @@ import LivingGuidePage from './pages/LivingGuidePage';
 import VideosPage from './pages/VideosPage';
 import BlogIndexPage from './pages/BlogIndexPage';
 import BlogPostPage from './pages/BlogPostPage';
+import ExternalResourcesPage from './pages/ExternalResourcesPage';
 import AdminLogin from './pages/admin/AdminLogin';
 import AdminShell from './pages/admin/AdminShell';
 import AdminVideos from './pages/admin/AdminVideos';
 import AdminBlogs from './pages/admin/AdminBlogs';
 import './App.css';
+
+function ExternalRedirect({ to }) {
+  useEffect(() => {
+    window.location.replace(to);
+  }, [to]);
+  return null;
+}
 
 export default function App() {
   return (
@@ -41,6 +50,9 @@ export default function App() {
         <Route path="videos" element={<VideosPage />} />
         <Route path="blog" element={<BlogIndexPage />} />
         <Route path="blog/:slug" element={<BlogPostPage />} />
+        <Route path="pages" element={<ExternalResourcesPage />} />
+        <Route path="pages/brink-trick-47383861" element={<ExternalRedirect to="https://brink-trick-47383861.figma.site" />} />
+        <Route path="pages/render-hook-84840522" element={<ExternalRedirect to="https://render-hook-84840522.figma.site" />} />
         <Route path="topic/:topicId/summary" element={<TopicSummaryPage />} />
         <Route path="topic/:topicId" element={<TopicPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />

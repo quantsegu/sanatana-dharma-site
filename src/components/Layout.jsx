@@ -21,6 +21,7 @@ export default function Layout() {
           <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>Home</NavLink>
           <NavLink to="/living-guide" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>Living Guide</NavLink>
           <NavLink to="/videos" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>Videos</NavLink>
+          <NavLink to="/pages" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>Pages</NavLink>
           <NavLink to="/blog" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>Blog</NavLink>
           <NavLink to="/timeline" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>Timeline</NavLink>
           <NavLink to="/library" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>Library</NavLink>

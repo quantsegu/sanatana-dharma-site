@@ -1,16 +1,61 @@
-# React + Vite
+# Sanatana Dharma Site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + Vite frontend with an Express API backend that serves CMS data and, in production, also serves the built frontend from `dist`.
 
-Currently, two official plugins are available:
+## Added external pages
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The following links are now available as site pages:
 
-## React Compiler
+- `/pages/brink-trick-47383861` -> `https://brink-trick-47383861.figma.site`
+- `/pages/render-hook-84840522` -> `https://render-hook-84840522.figma.site`
+- `/pages` -> index page listing both external resources
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Local development
 
-## Expanding the ESLint configuration
+1. Install dependencies:
+   - `npm install`
+2. Copy env file:
+   - `cp .env.example .env`
+3. Start frontend + API together:
+   - `npm run dev`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The API runs on `PORT` (default `3001`), and Vite runs on `5173`.
+
+## Production run (single process)
+
+Build the frontend, then run Express:
+
+- `npm run build`
+- `npm start`
+
+In production (`NODE_ENV=production`), Express serves both:
+
+- API routes at `/api/*`
+- frontend routes from `dist/index.html`
+
+## Railway deployment
+
+This repo is configured for Railway with `railway.json`.
+
+### Required environment variables
+
+Set these in Railway service variables:
+
+- `NODE_ENV=production`
+- `ADMIN_PASSWORD=<strong-password>`
+- `ADMIN_SECRET=<long-random-secret>`
+- `PORT` (Railway usually injects this automatically; keep if needed)
+
+### Deploy steps
+
+1. Push this repo to GitHub.
+2. In Railway, create a new project from the GitHub repo.
+3. Railway will run:
+   - build: `npm ci && npm run build`
+   - start: `npm run start`
+4. Open the generated Railway domain and verify:
+   - `/`
+   - `/api/health`
+   - `/pages`
+   - `/pages/brink-trick-47383861`
+   - `/pages/render-hook-84840522`
